@@ -1,0 +1,8 @@
+.links > a{
+	text-decoration: none;
+	color: inherit;
+	&:active {
+		text-decoration: none;
+		color: inherit;
+	}
+}
