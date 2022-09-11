@@ -6,12 +6,34 @@ import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
+import NavBar from "./components/NavBar/NavBar";
+import Episodes from "./Pages/Episodes";
+import Locations from "./Pages/Locations";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+	return (
+		<Router>
+			<div className="App">
+				<NavBar />
+			</div>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/episodes" element={<Episodes />} />
+				<Route path="/locations" element={<Locations />} />
+			</Routes>
+		</Router>
+	);
+}
+
+const Home = () => {
+	let [status, setStatus] = useState("");
 	let [search, setSearch] = useState("");
+	let [gender, setGender] = useState("");
+	let [species, setSpecies] = useState("");
 	let [fetchedData, setFetchedData] = useState([]);
 	let [pageNumber, setPageNumber] = useState(1);
-	let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+	let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 	let { info, results } = fetchedData;
 
 	useEffect(() => {
@@ -23,15 +45,15 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1 className="text-center ubuntu my-4">
-				Rick & Morty <span className="text-primary">WiKi</span>
-			</h1>
 			<Search setSearch={setSearch} setPageNumber={setPageNumber} />
 			<div className="container">
 				<div className="row">
-					<div className="col-3">
-						<Filters />
-					</div>
+					<Filters
+						setStatus={setStatus}
+						setPageNumber={setPageNumber}
+						setGender={setGender}
+						setSpecies={setSpecies}
+					/>
 					<div className="col-8">
 						<div className="row">
 							<Cards results={results} />
@@ -46,6 +68,6 @@ function App() {
 			/>
 		</div>
 	);
-}
+};
 
 export default App;

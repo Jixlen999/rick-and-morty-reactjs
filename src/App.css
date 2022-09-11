@@ -1,0 +1,11 @@
+.active {
+	border-bottom: 3px solid #0b5ed7;
+	font-weight: bold !important;
+	color: #0b5ed7 !important;
+}
+
+@media screen and (max-width: 992px) {
+	.active {
+		border-bottom: none;
+	}
+}
