@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards/Cards";
-import EpisodeGroup from "../components/Filters/Category/EpisodeGroup";
+import EpisodeAndLocationGroup from "../components/Filters/Category/EpisodeAndLocationGroup";
 
 const Episodes = () => {
 	let [id, setID] = useState(1);
@@ -36,7 +36,11 @@ const Episodes = () => {
 			<div className="row">
 				<div className="col-3">
 					<h4 className="text-center mb-4">Pick Episodes</h4>
-					<EpisodeGroup total={51} name="Episode" setID={setID} />
+					<EpisodeAndLocationGroup
+						total={51}
+						name="Episode"
+						setID={setID}
+					/>
 				</div>
 				<div className="col-8">
 					<div className="row">
