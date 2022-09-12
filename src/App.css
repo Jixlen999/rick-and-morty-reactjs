@@ -5,7 +5,7 @@ a.active.nav-link {
 }
 
 @media screen and (max-width: 992px) {
-	.active_link {
+	a.active.nav-link {
 		border-bottom: none;
 	}
 }
