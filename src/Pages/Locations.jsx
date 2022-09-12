@@ -37,7 +37,7 @@ const Locations = () => {
 				</h6>
 			</div>
 			<div className="row">
-				<div className="col-3">
+				<div className="col-lg-3 col-12">
 					<h4 className="text-center mb-4">Pick Location</h4>
 					<EpisodeAndLocationGroup
 						total={126}
@@ -45,7 +45,7 @@ const Locations = () => {
 						setID={setID}
 					/>
 				</div>
-				<div className="col-8">
+				<div className="col-lg-8 col-12">
 					<div className="row">
 						<Cards page="/locations/" results={results} />
 					</div>
