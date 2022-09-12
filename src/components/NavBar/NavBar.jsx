@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import "../../App.css";
 
 const NavBar = () => {
 	return (
@@ -34,11 +33,7 @@ const NavBar = () => {
 					id="navbarNavAltMarkup"
 				>
 					<div className="navbar-nav fs-5">
-						<NavLink
-							to="/"
-							className="nav-link"
-							activeClassName="active"
-						>
+						<NavLink to="/" className="nav-link">
 							Characters
 						</NavLink>
 						<NavLink to="/episodes" className="nav-link">
