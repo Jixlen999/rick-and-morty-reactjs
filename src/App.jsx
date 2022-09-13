@@ -9,7 +9,7 @@ import Search from "./components/Search/Search";
 import NavBar from "./components/NavBar/NavBar";
 import Episodes from "./Pages/Episodes";
 import Locations from "./Pages/Locations";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import CardDetails from "./components/Cards/CardDetails";
 
 function App() {
@@ -19,30 +19,12 @@ function App() {
 				<NavBar />
 			</div>
 			<Routes>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/"
-					element={<Home />}
-				/>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/:id"
-					element={<CardDetails />}
-				/>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/episodes"
-					element={<Episodes />}
-				/>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/episodes/:id"
-					element={<CardDetails />}
-				/>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/locations"
-					element={<Locations />}
-				/>
-				<Route
-					path="https://jixlen999.github.io/rick-and-morty-reactjs/locations/:id"
-					element={<CardDetails />}
-				/>
+				<Route path="/" element={<Home />} />
+				<Route path="/:id" element={<CardDetails />} />
+				<Route path="/episodes" element={<Episodes />} />
+				<Route path="/episodes/:id" element={<CardDetails />} />
+				<Route path="/locations" element={<Locations />} />
+				<Route path="/locations/:id" element={<CardDetails />} />
 			</Routes>
 		</Router>
 	);
